@@ -1,5 +1,5 @@
 {
-    "name" : "yudao-ui-app",
+    "name" : "拍拍审",
     "appid" : "__UNI__6F6CFB7",
     "description" : "yudao-ui-app for ruoyi-vue-pro",
     "versionName" : "1.0.0",
@@ -17,7 +17,9 @@
             "delay" : 0
         },
         /* 模块配置 */
-        "modules" : {},
+        "modules" : {
+            "Share" : {}
+        },
         /* 应用发布信息 */
         "distribute" : {
             /* android打包配置 */
@@ -41,9 +43,19 @@
                 ]
             },
             /* ios打包配置 */
-            "ios" : {},
+            "ios" : {
+                "dSYMs" : false
+            },
             /* SDK配置 */
-            "sdkConfigs" : {}
+            "sdkConfigs" : {
+                "ad" : {},
+                "share" : {
+                    "weixin" : {
+                        "appid" : "wxdc1b7292be669569",
+                        "UniversalLinks" : ""
+                    }
+                }
+            }
         }
     },
     /* 快应用特有相关 */
