@@ -14,6 +14,8 @@ export default {
     // #endif
   },
   onShow: function () {
+    // 隐藏导航
+    // uni.hideTabBar()
     console.log('App Show')
   },
   onHide: function () {
@@ -28,4 +30,7 @@ export default {
 
 /*每个页面公共scss */
 @import 'app.scss';
+page{
+  height: 100%;
+}
 </style>

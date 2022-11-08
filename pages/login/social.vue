@@ -16,7 +16,7 @@
         <!-- #endif -->
 
         <!-- #ifndef MP-WEIXIN -->
-           <u-button type="primary" text="相册" @click="getUserinfo"></u-button>
+           <!-- <u-button type="primary" text="相册" @click="getUserinfo"></u-button> -->
         <u-button type="primary" text="手机号登录/注册" @click="handleJump"></u-button>
         <!-- #endif -->
       </view>
