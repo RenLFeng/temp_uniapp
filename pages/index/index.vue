@@ -1,29 +1,39 @@
 <template>
   <view class="container">
     <view class="item item1">
-      <text class="title">AI智能审查</text>
-      <text>一键上传,专业审查，开店无忧</text>
+      <view class="text-info">
+        <text class="title">AI智能审查</text>
+        <text>一键上传,专业审查，开店无忧</text>
+      </view>
 
-      <!-- <u-button class="auth-btn" type="primary" @click="uploadFile">上传文件</u-button> -->
-      <!-- <u-button class="auth-btn" type="primary" @click="toWeixin">打开微信</u-button> -->
+      <u-button class="btn" size="mini" type="primary" @click="goUpload()">立即使用</u-button>
+    </view>
+    <!--
+    <u-popup :show="show" @close="close" @open="open"  mode="center">
+      <view>
+        <text>出淤泥而不染，濯清涟而不妖</text>
+      </view>
+    </u-popup>
+    <u-button @click="show = true">打开</u-button> -->
+    <!-- <u-button class="auth-btn" type="primary" @click="uploadFile">上传文件</u-button> -->
+    <!-- <u-button class="auth-btn" type="primary" @click="toWeixin">打开微信</u-button> -->
 
-      <!-- <u-button class="auth-btn" type="primary" @click="toWeixinMini0">打开微信小程序0</u-button>
+    <!-- <u-button class="auth-btn" type="primary" @click="toWeixinMini0">打开微信小程序0</u-button>
        <u-button class="auth-btn" type="primary" @click="toWeixinMini1">打开微信小程序1</u-button>
         <u-button class="auth-btn" type="primary" @click="toWeixinMini2">打开微信小程序2</u-button> -->
-      <!-- <view class="item item1">
+    <!-- <view class="item item1">
         <u-button class="auth-btn" type="primary" v-for="(item,i) in app_lists" :key="item.scheme" @click="toAPP(item)">
           打开{{item.name}}
         </u-button>
       </view> -->
-      <!--    <view>
+    <!--    <view>
         <u-popup v-model="show">
           <view>出淤泥而不染，濯清涟而不妖</view>
         </u-popup>
         <u-button @click="show = true">打开</u-button>
       </view> -->
-      <!-- <u-calendar v-model="show" :mode="mode"></u-calendar>
+    <!-- <u-calendar v-model="show" :mode="mode"></u-calendar>
     <u-button @click="show = true">打开</u-button> -->
-    </view>
     <!-- <view>上传图片  {{imageList.length}}/{{count}}</view>
     <view class="uni-list list-pd">
     	<view class="uni-uploader__files">
@@ -37,7 +47,23 @@
     		</view>
     	</view>
     </view> -->
-    <u-button class="go-upload" type="primary" @click="goUpload()">立即使用</u-button>
+    <!-- view>
+    		<u-action-sheet :list="[]" v-model="sheetshow"></u-action-sheet>
+    		<u-button @click="sheetshow = true">打开ActionSheet</u-button>
+    	</view>
+    <view>
+       <u-popup v-model="show">
+         <view>出淤泥而不染，濯清涟而不妖</view>
+       </u-popup>
+       <u-button @click="show = true">打开</u-button>
+     </view> -->
+    <!--  <u-action-sheet :list="[]" v-model="sheetshow"></u-action-sheet>
+     <u-button @click="sheetshow = true">打开ActionSheet</u-button> -->
+    <!-- <u-button type="primary" @click="gowebview()">webview</u-button> -->
+
+    <u-button
+      v-track="{triggerType:'click',currentUrl: $route.path,behavior:'点击xxx按钮',businessCode: 19,actionType:'xxx-click'}"
+      class="go-upload" type="primary" @click="goUpload()">立即使用</u-button>
   </view>
 
 </template>
@@ -94,9 +120,29 @@
     components: {},
     data() {
       return {
+        list: [{
+            name: '选项一',
+            subname: "选项一描述",
+            color: '#ffaa7f',
+            fontSize: '20'
+          },
+          {
+            name: '选项二禁用',
+            disabled: true
+          },
+          {
+            name: '开启load加载', //开启后文字不显示
+            loading: true
+          }
+        ],
+        title: '标题',
+        content: 'uView的目标是成为uni-app生态最优秀的UI框架',
+        show: false,
+        sheetshow: false,
         imageList: [],
         show: false,
-        app_lists: arrs
+        app_lists: arrs,
+
       }
     },
     computed: {
@@ -116,15 +162,20 @@
       }
     },
     onLoad() {
-
+      uni.hideTabBar()
       // this.loadBannerData();
       // this.loadNoticeData();
     },
     methods: {
+      gowebview() {
+        uni.navigateTo({
+          url: '/pages/webview/webview',
+        });
+      },
       goUpload(e) {
         console.log(e);
         uni.navigateTo({
-          url: '/pages/hetong/hetong',
+          url: '/pages/fileupload/fileupload',
         });
       },
       uploadFile() {
@@ -232,6 +283,13 @@
         uni.$u.route('/pages/product/product', {
           productId: productId
         })
+      },
+      open() {
+        // console.log('open');
+      },
+      close() {
+        this.show = false
+        // console.log('close');
       }
     },
 
@@ -247,10 +305,11 @@
 
       text {
         font-size: 14px;
+        color: #6e6d6d;
       }
 
       .title {
-        font-size: 22px;
+        font-size: 24px;
         color: #000;
       }
 
@@ -261,11 +320,23 @@
 
       &.item1 {
         @include flex;
-        align-items: center;
-        align-content: space-around;
-        justify-content: center;
+        justify-content: space-evenly;
         flex-direction: column;
         background: #f0f0f0;
+
+        .text-info {
+          @include flex;
+          flex-direction: column;
+
+          text {
+            margin-top: 10px;
+          }
+        }
+
+        .btn {
+          width: 100px;
+          height: 30px;
+        }
       }
     }
 

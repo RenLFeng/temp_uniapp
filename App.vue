@@ -15,7 +15,7 @@ export default {
   },
   onShow: function () {
     // 隐藏导航
-    // uni.hideTabBar()
+    uni.hideTabBar()
     console.log('App Show')
   },
   onHide: function () {
@@ -27,10 +27,11 @@ export default {
 <style lang="scss">
 /* 引入uView基础样式 */
 @import '@/uni_modules/uview-ui/index.scss';
+// @import "uview-ui/index.scss";
 
 /*每个页面公共scss */
 @import 'app.scss';
 page{
-  height: 100%;
+  // height: 100%;
 }
 </style>

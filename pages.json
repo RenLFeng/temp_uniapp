@@ -1,4 +1,8 @@
 {
+  "easycom": {
+    "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+  	// "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+  },
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 
 
@@ -8,19 +12,18 @@
         "navigationBarTitleText": "拍拍审"
       }
     },
-    {
+   {
       "path": "pages/messagefile/messagefile",
       "style": {
-        "navigationBarTitleText": "文件上传"
+        "navigationBarTitleText": ""
       }
     },
-
-    {
-      "path": "pages/category/category",
-      "style": {
-        "navigationBarTitleText": "分类"
-      }
-    },
+    // {
+    //   "path": "pages/category/category",
+    //   "style": {
+    //     "navigationBarTitleText": "分类"
+    //   }
+    // },
     {
       "path": "pages/category/product-list",
       "style": {
@@ -29,12 +32,12 @@
         "navigationBarTextStyle": "white"
       }
     },
-    {
-      "path": "pages/cart/cart",
-      "style": {
-        "navigationBarTitleText": "购物车"
-      }
-    },
+    // {
+    //   "path": "pages/cart/cart",
+    //   "style": {
+    //     "navigationBarTitleText": "购物车"
+    //   }
+    // },
     {
       "path": "pages/user/user",
       "style": {
@@ -65,18 +68,18 @@
         "navigationBarTitleText": "个人资料"
       }
     },
-    {
-      "path": "pages/product/product",
-      "style": {
-        "navigationBarTitleText": "商品详情"
-      }
-    },
-    {
-      "path": "pages/address/list",
-      "style": {
-        "navigationBarTitleText": "收货地址"
-      }
-    },
+    // {
+    //   "path": "pages/product/product",
+    //   "style": {
+    //     "navigationBarTitleText": "商品详情"
+    //   }
+    // },
+    // {
+    //   "path": "pages/address/list",
+    //   "style": {
+    //     "navigationBarTitleText": "收货地址"
+    //   }
+    // },
     {
       "path": "pages/search/search",
       "style": {
@@ -94,15 +97,30 @@
       "style": {
         "navigationBarTitleText": "修改地址"
       }
+    }, {
+      "path": "pages/fileupload/fileupload",
+      "style": {
+        "navigationBarTitleText": "拍拍审",
+        "enablePullDownRefresh": false
+      }
+
     }
       ,{
-            "path" : "pages/hetong/hetong",
-            "style" :                                                                                    
+            "path" : "pages/webview/webview",
+            "style" :
             {
-                "navigationBarTitleText": "合同",
+                "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
+
+        },{
+            "path" : "pages/server/server",
+            "style" :
+            {
+                "navigationBarTitleText": "拍拍审",
+                "enablePullDownRefresh": false
+            }
+
         }
     ],
   "tabBar": {
@@ -115,30 +133,30 @@
       //   "iconPath": "/static/images/tabbar/index.png",
       //   "selectedIconPath": "/static/images/tabbar/index-active.png"
       // },
-      {
-        "pagePath": "pages/category/category",
-        "text": "分类",
-        "iconPath": "/static/images/tabbar/category.png",
-        "selectedIconPath": "/static/images/tabbar/category-active.png"
-      },
-
-      {
-        "pagePath": "pages/cart/cart",
-        "text": "购物车",
-        "iconPath": "/static/images/tabbar/cart.png",
-        "selectedIconPath": "/static/images/tabbar/cart-active.png"
-      },
       // {
-      // 	"pagePath": "pages/messagefile/messagefile",
-      // 	"text": "上传文件",
-      // 	"iconPath": "/static/images/tabbar/cart.png",
-      // 	"selectedIconPath": "/static/images/tabbar/cart-active.png"
+      //   "pagePath": "pages/category/category",
+      //   "text": "分类",
+      //   "iconPath": "/static/images/tabbar/category.png",
+      //   "selectedIconPath": "/static/images/tabbar/category-active.png"
+      // },
+
+      // {
+      //   "pagePath": "pages/cart/cart",
+      //   "text": "购物车",
+      //   "iconPath": "/static/images/tabbar/cart.png",
+      //   "selectedIconPath": "/static/images/tabbar/cart-active.png"
       // },
       {
-        "pagePath": "pages/user/user",
-        "text": "我的",
-        "iconPath": "/static/images/tabbar/user.png",
-        "selectedIconPath": "/static/images/tabbar/user-active.png"
+      	"pagePath": "pages/messagefile/messagefile"
+      	// "text": "上传文件",
+      	// "iconPath": "/static/images/tabbar/cart.png",
+      	// "selectedIconPath": "/static/images/tabbar/cart-active.png"
+      },
+      {
+        "pagePath": "pages/index/index"
+        // "text": "我的",
+        // "iconPath": "/static/images/tabbar/user.png",
+        // "selectedIconPath": "/static/images/tabbar/user-active.png"
       }
     ]
   },
