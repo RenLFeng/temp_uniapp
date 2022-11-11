@@ -30,7 +30,7 @@ Vue.directive('track', {
       } else if (binding.value.triggerType == 'click') {
         //如果是click类型，监听click事件
         el.addEventListener('click', (event) => {
-          console.log(el, binding, vnode)
+          console.log('埋点click',el, binding, vnode)
           //调用后台接口保存数据
           // api.eventTrack.saveEventTrack(params);
         }, false)

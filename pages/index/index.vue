@@ -4,10 +4,16 @@
       <view class="text-info">
         <text class="title">AI智能审查</text>
         <text>一键上传,专业审查，开店无忧</text>
-      </view>
 
+      </view>
       <u-button class="btn" size="mini" type="primary" @click="goUpload()">立即使用</u-button>
     </view>
+    <!--    <image style="width: 100px;height: 100px;" :src="codesrc" mode="aspectFit"></image>
+    <u-input v-model="loginInfo.code"></u-input>
+    <text @click="_login">_login</text>
+    <view class="" v-for="(item,index) in ruterLists" :key="index">
+      {{item.title}}
+    </view> -->
     <!--
     <u-popup :show="show" @close="close" @open="open"  mode="center">
       <view>
@@ -61,14 +67,27 @@
      <u-button @click="sheetshow = true">打开ActionSheet</u-button> -->
     <!-- <u-button type="primary" @click="gowebview()">webview</u-button> -->
 
-    <u-button
-      v-track="{triggerType:'click',currentUrl: $route.path,behavior:'点击xxx按钮',businessCode: 19,actionType:'xxx-click'}"
-      class="go-upload" type="primary" @click="goUpload()">立即使用</u-button>
+
+    <!-- <div class="app-online-list" v-track="{triggerType:'browse',currentUrl: $route.path,behavior:'浏览xxx功能',businessCode: 19,actionType:'xxx-view'}">
+    </div> -->
+    <!-- <div class="app-online-list" v-track="{triggerType:'click',currentUrl: $route.path,behavior:'点击xxx按钮',businessCode: 19,actionType:'xxx-click'}">
+</div> -->
+   <!-- <button type="primary"
+      v-track="{triggerType:'click',currentUrl: $route.path,behavior:'点击xxx按钮',businessCode: 19,actionType:'xxx-click'}">页面主操作
+      Normal</button> -->
+    <u-button  v-track="{triggerType:'click',currentUrl: $route.path,behavior:'点击xxx按钮',businessCode: 19,actionType:'xxx-click'}" class="go-upload" type="primary" @click="goUpload()">立即使用</u-button>
+
   </view>
 
 </template>
 
 <script>
+  import {
+    mapState,
+    mapGetters,
+    mapMutations,
+    mapActions
+  } from 'vuex';
   let arrs = [
     // 只在 ios 中生效
     {
@@ -115,6 +134,11 @@
     getBannerData,
     getNoticeData
   } from '../../api/index'
+  import {
+    captcha,
+    login,
+    getinfo
+  } from '@/api/user';
 
   export default {
     components: {},
@@ -142,10 +166,19 @@
         imageList: [],
         show: false,
         app_lists: arrs,
-
+        loginInfo: {
+          username: 'admin',
+          password: '@LD#F4*309-Ai',
+          rememberMe: false,
+          code: '6200',
+          uuid: ''
+        },
+        codesrc: ''
       }
     },
     computed: {
+      ...mapState(['ruterLists']),
+      ...mapGetters(['powerCount']),
       swiperList() {
         return this.bannerList.map(item => {
           if (item) {
@@ -162,11 +195,33 @@
       }
     },
     onLoad() {
+      // this.testPost();
       uni.hideTabBar()
-      // this.loadBannerData();
-      // this.loadNoticeData();
     },
     methods: {
+      async testPost() {
+        let res = await captcha({
+          page: 0,
+          pagesize: 20
+        })
+        // let res = await banke({
+        //   page: 0,
+        //   pagesize: 5
+        // })
+        console.log('反对水水水水', res)
+        this.codesrc = res.data
+        this.loginInfo.uuid = res.id;
+      },
+      _login() {
+        this.$store.dispatch('doLogin', this.loginInfo).then(res => {
+          console.log('登录', res)
+          if (res.code == 200) {
+            setTimeout(() => {
+              getinfo()
+            }, 3000)
+          }
+        })
+      },
       gowebview() {
         uni.navigateTo({
           url: '/pages/webview/webview',

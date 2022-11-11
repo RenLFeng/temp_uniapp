@@ -67,7 +67,7 @@ module.exports = vm => {
       } else if (code === 901) {
         uni.$u.toast('演示模式，无法进行写操作')
         return Promise.reject(res)
-      } else if (code !== 0) {
+      } else if (code !== 200) {
         if (msg === '无效的刷新令牌') {
           // hard coding：忽略这个提示，直接登出
           console.log(msg)

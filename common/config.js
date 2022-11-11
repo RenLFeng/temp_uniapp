@@ -1,10 +1,10 @@
 module.exports = {
   //后端接口地址
-  baseUrl: 'http://127.0.0.1:48080/app-api',
+  baseUrl: 'http://10.20.10.29:8880',
   // 超时
-  timeout: 30000,
+  timeout: 1000*10,
   // 禁用 Cookie 等信息
-  withCredentials: false,
+  // withCredentials: true,
   header: {
     //租户ID
     // 'tenant-id': 1

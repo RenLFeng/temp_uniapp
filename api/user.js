@@ -1,5 +1,8 @@
 //请求工具参考https://ext.dcloud.net.cn/plugin?id=392
-const { http } = uni.$u
+const {
+  http
+} = uni.$u
+
 
 //获取用户信息
 export const getUserInfo = params => http.get('/member/user/get', params)
@@ -11,4 +14,11 @@ export const updateAvatar = filePath =>
     filePath: filePath
   })
 //修改用户昵称
-export const updateNickname = params => http.put('/member/user/update-nickname', {}, { params })
+export const updateNickname = params => http.put('/member/user/update-nickname', {}, {
+  params
+})
+export const captcha = params => http.get('/api/v1/captcha', params)
+// login 登陆
+export const login = params => http.post('/api/v1/login', params)
+export const getinfo = params => http.get('/api/v1/getinfo', params)
+export const menurole = params => http.get('/api/v1/menurole', params)

@@ -2,8 +2,8 @@
     "name" : "拍拍审",
     "appid" : "__UNI__619584E",
     "description" : "yudao-ui-app2",
-    "versionName" : "1.0.1",
-    "versionCode" : "100",
+    "versionName" : "3.2",
+    "versionCode" : 180,
     "transformPx" : false,
     /* 5+App特有相关 */
     "app-plus" : {

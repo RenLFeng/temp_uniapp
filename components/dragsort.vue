@@ -8,7 +8,7 @@
           <slot name="content" :item="item"></slot>
           <text class="label-item">{{index+1}}</text>
         </view>
-        <image class="pic-item" :src="item.path"></image>
+        <image class="pic-item" :src="item.path" mode="scaleToFill"></image>
         <u-icon class="-icon" name="close" color="#f00" @click="del(item,index)"></u-icon>
         <!-- <text class="label-item">{{item.label}}</text> -->
         <!--  <text class="label-item">{{index+1}}</text> -->
@@ -263,7 +263,7 @@
 
     ._item {
       position: absolute;
-      border: 1px solid #ccc;
+      // border: 1px solid #ccc;
     }
 
     .pic-item {
@@ -271,7 +271,7 @@
       top: 0;
       left: 0;
       z-index: -1;
-      width: 80%;
+      width: 90%;
       height: 80%;
       margin: 0 10%;
     }

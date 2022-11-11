@@ -1,7 +1,7 @@
 {
   "easycom": {
     "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
-  	// "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+    // "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
   },
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 
@@ -12,7 +12,7 @@
         "navigationBarTitleText": "拍拍审"
       }
     },
-   {
+    {
       "path": "pages/messagefile/messagefile",
       "style": {
         "navigationBarTitleText": ""
@@ -24,50 +24,50 @@
     //     "navigationBarTitleText": "分类"
     //   }
     // },
-    {
-      "path": "pages/category/product-list",
-      "style": {
-        "navigationBarTitleText": "",
-        "navigationStyle": "custom",
-        "navigationBarTextStyle": "white"
-      }
-    },
+    // {
+    //   "path": "pages/category/product-list",
+    //   "style": {
+    //     "navigationBarTitleText": "",
+    //     "navigationStyle": "custom",
+    //     "navigationBarTextStyle": "white"
+    //   }
+    // },
     // {
     //   "path": "pages/cart/cart",
     //   "style": {
     //     "navigationBarTitleText": "购物车"
     //   }
     // },
-    {
-      "path": "pages/user/user",
-      "style": {
-        "navigationBarTitleText": "我的"
-      }
-    },
-    {
-      "path": "pages/login/social",
-      "style": {
-        "navigationBarTitleText": "授权登录"
-      }
-    },
-    {
-      "path": "pages/login/mobile",
-      "style": {
-        "navigationBarTitleText": "手机登录"
-      }
-    },
-    {
-      "path": "pages/forgot/forgot",
-      "style": {
-        "navigationBarTitleText": "忘记密码"
-      }
-    },
-    {
-      "path": "pages/profile/profile",
-      "style": {
-        "navigationBarTitleText": "个人资料"
-      }
-    },
+    // {
+    //   "path": "pages/user/user",
+    //   "style": {
+    //     "navigationBarTitleText": "我的"
+    //   }
+    // },
+    // {
+    //   "path": "pages/login/social",
+    //   "style": {
+    //     "navigationBarTitleText": "授权登录"
+    //   }
+    // },
+    // {
+    //   "path": "pages/login/mobile",
+    //   "style": {
+    //     "navigationBarTitleText": "手机登录"
+    //   }
+    // },
+    // {
+    //   "path": "pages/forgot/forgot",
+    //   "style": {
+    //     "navigationBarTitleText": "忘记密码"
+    //   }
+    // },
+    // {
+    //   "path": "pages/profile/profile",
+    //   "style": {
+    //     "navigationBarTitleText": "个人资料"
+    //   }
+    // },
     // {
     //   "path": "pages/product/product",
     //   "style": {
@@ -80,49 +80,47 @@
     //     "navigationBarTitleText": "收货地址"
     //   }
     // },
+    // {
+    //   "path": "pages/search/search",
+    //   "style": {
+    //     "navigationBarTitleText": "搜索"
+    //   }
+    // },
+    // {
+    //   "path": "pages/address/create",
+    //   "style": {
+    //     "navigationBarTitleText": "新增地址"
+    //   }
+    // },
+    // {
+    //   "path": "pages/address/update",
+    //   "style": {
+    //     "navigationBarTitleText": "修改地址"
+    //   }
+    // },
     {
-      "path": "pages/search/search",
-      "style": {
-        "navigationBarTitleText": "搜索"
-      }
-    },
-    {
-      "path": "pages/address/create",
-      "style": {
-        "navigationBarTitleText": "新增地址"
-      }
-    },
-    {
-      "path": "pages/address/update",
-      "style": {
-        "navigationBarTitleText": "修改地址"
-      }
-    }, {
       "path": "pages/fileupload/fileupload",
       "style": {
         "navigationBarTitleText": "拍拍审",
         "enablePullDownRefresh": false
       }
 
+    }, {
+      "path": "pages/webview/webview",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/server/server",
+      "style": {
+        "navigationBarTitleText": "拍拍审",
+        "enablePullDownRefresh": false
+      }
+
     }
-      ,{
-            "path" : "pages/webview/webview",
-            "style" :
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-
-        },{
-            "path" : "pages/server/server",
-            "style" :
-            {
-                "navigationBarTitleText": "拍拍审",
-                "enablePullDownRefresh": false
-            }
-
-        }
-    ],
+  ],
   "tabBar": {
     "selectedColor": "#333333",
     "color": "#bfbfbf",
@@ -147,10 +145,10 @@
       //   "selectedIconPath": "/static/images/tabbar/cart-active.png"
       // },
       {
-      	"pagePath": "pages/messagefile/messagefile"
-      	// "text": "上传文件",
-      	// "iconPath": "/static/images/tabbar/cart.png",
-      	// "selectedIconPath": "/static/images/tabbar/cart-active.png"
+        "pagePath": "pages/messagefile/messagefile"
+        // "text": "上传文件",
+        // "iconPath": "/static/images/tabbar/cart.png",
+        // "selectedIconPath": "/static/images/tabbar/cart-active.png"
       },
       {
         "pagePath": "pages/index/index"

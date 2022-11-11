@@ -33,9 +33,9 @@
     </view>
     <u-button v-if="fileList.length && !hasPic" class="go-upload" type="primary" @click="submit()">完成</u-button>
     <u-button v-if="hasPic" class="go-upload" type="primary" @click="check()">审核合同</u-button>
-    <u-action-sheet :actions="sheetlist" :closeOnClickOverlay="true" :closeOnClickAction="true" :title="title"
+  <!--  <u-action-sheet :actions="sheetlist" :closeOnClickOverlay="true" :closeOnClickAction="true" :title="title"
       :show="show"></u-action-sheet>
-    <u-button @click="show = true">打开ActionSheet</u-button>
+    <u-button @click="show = true">打开ActionSheet</u-button> -->
   </view>
 </template>
 
@@ -224,15 +224,14 @@
           // sourceType: ['album'], //album 从相册选图，camera 使用相机，
           success: function(res) {
             console.log(res);
-            if (res.errMsg && res.errMsg == 'chooseImage:ok') {
+            if (res.tempFiles && res.tempFiles.length) {
               vthis.fileList = [...vthis.fileList, ...res.tempFiles]
               vthis.$refs.dragsort && vthis.$refs.dragsort.initUpdate()
               console.log(' uni.chooseImage', vthis.fileList)
             }
-
           },
           fail(err) {
-            uni.$u.toast('失败异常');
+            // uni.$u.toast('失败异常');
           }
         });
       },
