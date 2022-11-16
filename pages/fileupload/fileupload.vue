@@ -4,28 +4,15 @@
       请按照页码顺序上传您的合同
     </view>
     <text class="tips_info">支持上传图片,拍照,Docx文件</text>
+    <!-- controlsList 表示控件的列表  controlsSize 表示每个控件的大小 -->
     <drag-sort :controlsList="fileList" :controlsSize="{width: 100, height: 100}" @movechange="onMoveChange"
       ref="dragsort" v-if="fileList.length">
     </drag-sort>
 
-    <view class="upload-wrap" @click="uploadFile" v-if="!hasPic">
+    <view class="upload-wrap" @click="sheetShow = true" v-if="!hasPic">
       <text class="add_icon">+</text>
     </view>
     <view>
-
-
-      <!--  <view>
-      <u-action-sheet :list="list" v-model="show"></u-action-sheet>
-      <u-button @click="show = true">打开ActionSheet</u-button>
-    </view> -->
-      <!--轮播图-->
-      <!--    <view class="wrap">
-      <u-swiper :list="list2" previousMargin="20" nextMargin="20" circular height="200"></u-swiper>
-    </view> -->
-      <!-- <u-action-sheet :actions="list2" :closeOnClickOverlay="true" :closeOnClickAction="true"  :title="title" :show="actionshow"  @close="show=false"></u-action-sheet> -->
-
-      <!-- controlsList 表示控件的列表  controlsSize 表示每个控件的大小 -->
-
       <view class="upload-wrap" v-if="hasPic">
         <image class="pic-item" :src="hasPic.smallPic" mode="aspectFit" @click="preview"></image>
         <u-icon class="-icon" name="close" color="#f00" @click="delht"></u-icon>
@@ -33,9 +20,10 @@
     </view>
     <u-button v-if="fileList.length && !hasPic" class="go-upload" type="primary" @click="submit()">完成</u-button>
     <u-button v-if="hasPic" class="go-upload" type="primary" @click="check()">审核合同</u-button>
-  <!--  <u-action-sheet :actions="sheetlist" :closeOnClickOverlay="true" :closeOnClickAction="true" :title="title"
-      :show="show"></u-action-sheet>
-    <u-button @click="show = true">打开ActionSheet</u-button> -->
+
+    <u-action-sheet @select="onselect" :actions="sheetList" :show="sheetShow" :closeOnClickOverlay="true"
+      :closeOnClickAction="true" @close="sheetShow=false" cancelText="取消"></u-action-sheet>
+
   </view>
 </template>
 
@@ -44,18 +32,21 @@
   export default {
     data() {
       return {
+        sheetShow: false,
         show: false,
         title: '标题',
         content: 'uView的目标是成为uni-app生态最优秀的UI框架',
-        sheetlist: [{
-            name: '选项一',
-
+        sheetList: [{
+            name: '选择图片',
+            type: 'album',
           },
           {
-            name: '选项二禁用',
+            name: '拍照',
+            type: 'camera',
           },
           {
-            name: '开启load加载', //开启后文字不显示
+            name: '微信上传Docx,PDF', //开启后文字不显示
+            type: 'weixin',
           }
         ],
         hasPic: '',
@@ -163,6 +154,18 @@
       this.getSavFile();
     },
     methods: {
+      //  下拉菜单
+      onselect(item) {
+        switch (item.type) {
+          case 'album':
+          case 'camera':
+            this.uploadFile(item.type)
+            break;
+          case 'weixin':
+            // to miniapp ....
+            break;
+        }
+      },
       //生成的合同预览图
       getSavFile() {
         //HttpRequest....
@@ -216,12 +219,12 @@
         this.popupshow = true;
         console.log(this.popupshow)
       },
-      uploadFile() {
+      uploadFile(sourceType) {
         let vthis = this;
         uni.chooseImage({
           // count: 6, //默认9
           // sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-          // sourceType: ['album'], //album 从相册选图，camera 使用相机，
+          sourceType: [sourceType], //album 从相册选图，camera 使用相机，
           success: function(res) {
             console.log(res);
             if (res.tempFiles && res.tempFiles.length) {

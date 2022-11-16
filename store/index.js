@@ -20,6 +20,10 @@ Vue.use(Vuex) // vue的插件机制
 // Vuex.Store 构造器选项
 const store = new Vuex.Store({
   state: {
+    userEventInfo:{
+      pageLoadTime:"",
+      PageViewTime:''
+    },
     accessToken: uni.getStorageSync(AccessTokenKey), // 访问令牌
     refreshToken: uni.getStorageSync(RefreshTokenKey), // 刷新令牌
     userInfo: {},
@@ -114,7 +118,10 @@ const store = new Vuex.Store({
     },
     update_ruters(state, lists) {
       state.ruterLists = lists;
-    }
+    },
+    SET_PAGE_EVENT(state,obj){
+      state.userEventInfo[obj.key]=obj.value;
+    },
   },
   actions: {
     //账号登录

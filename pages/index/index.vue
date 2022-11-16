@@ -1,87 +1,81 @@
 <template>
-  <view class="container">
+  <view class="container index-page">
     <view class="item item1">
       <view class="text-info">
-        <text class="title">AI智能审查</text>
-        <text>一键上传,专业审查，开店无忧</text>
-
+        <text class="title">法务专家+AI智能合同审查</text>
+        <text>一键上传，专业审查，开店无忧</text>
+      <!--  <text>{{userEventInfo.PageViewTime}}</text>
+         <text>{{userEventInfo.pageLoadTime}}</text> -->
       </view>
-      <u-button class="btn" size="mini" type="primary" @click="goUpload()">立即使用</u-button>
+      <u-button class="btn" type="primary" shape="circle" @click="goUpload()">立即使用</u-button>
     </view>
-    <!--    <image style="width: 100px;height: 100px;" :src="codesrc" mode="aspectFit"></image>
-    <u-input v-model="loginInfo.code"></u-input>
-    <text @click="_login">_login</text>
-    <view class="" v-for="(item,index) in ruterLists" :key="index">
-      {{item.title}}
-    </view> -->
-    <!--
-    <u-popup :show="show" @close="close" @open="open"  mode="center">
-      <view>
-        <text>出淤泥而不染，濯清涟而不妖</text>
-      </view>
-    </u-popup>
-    <u-button @click="show = true">打开</u-button> -->
-    <!-- <u-button class="auth-btn" type="primary" @click="uploadFile">上传文件</u-button> -->
-    <!-- <u-button class="auth-btn" type="primary" @click="toWeixin">打开微信</u-button> -->
-
-    <!-- <u-button class="auth-btn" type="primary" @click="toWeixinMini0">打开微信小程序0</u-button>
-       <u-button class="auth-btn" type="primary" @click="toWeixinMini1">打开微信小程序1</u-button>
-        <u-button class="auth-btn" type="primary" @click="toWeixinMini2">打开微信小程序2</u-button> -->
-    <!-- <view class="item item1">
-        <u-button class="auth-btn" type="primary" v-for="(item,i) in app_lists" :key="item.scheme" @click="toAPP(item)">
-          打开{{item.name}}
-        </u-button>
+    <view class="imgitem item2" id="item2 开店">
+  <!--    <view class="item-title">
+        <view class="title-img -left"></view>
+        <view class="title-text">
+          <text>想要开店?</text>
+          <text>面临各种合同</text>
+        </view>
+        <view class="title-img -right"> </view>
       </view> -->
-    <!--    <view>
-        <u-popup v-model="show">
-          <view>出淤泥而不染，濯清涟而不妖</view>
-        </u-popup>
-        <u-button @click="show = true">打开</u-button>
-      </view> -->
-    <!-- <u-calendar v-model="show" :mode="mode"></u-calendar>
-    <u-button @click="show = true">打开</u-button> -->
-    <!-- <view>上传图片  {{imageList.length}}/{{count}}</view>
-    <view class="uni-list list-pd">
-    	<view class="uni-uploader__files">
-    		<block v-for="(image,index) in imageList" :key="index">
-    			<view class="uni-uploader__file">
-    				<image class="uni-uploader__img" :src="image" :data-src="image" @tap="previewImage"></image>
-    			</view>
-    		</block>
-   		<view class="uni-uploader__input-box">
-    			<view class="uni-uploader__input" @tap="chooseImage"></view>
-    		</view>
-    	</view>
-    </view> -->
-    <!-- view>
-    		<u-action-sheet :list="[]" v-model="sheetshow"></u-action-sheet>
-    		<u-button @click="sheetshow = true">打开ActionSheet</u-button>
-    	</view>
-    <view>
-       <u-popup v-model="show">
-         <view>出淤泥而不染，濯清涟而不妖</view>
-       </u-popup>
-       <u-button @click="show = true">打开</u-button>
-     </view> -->
-    <!--  <u-action-sheet :list="[]" v-model="sheetshow"></u-action-sheet>
-     <u-button @click="sheetshow = true">打开ActionSheet</u-button> -->
-    <!-- <u-button type="primary" @click="gowebview()">webview</u-button> -->
-
-
-    <!-- <div class="app-online-list" v-track="{triggerType:'browse',currentUrl: $route.path,behavior:'浏览xxx功能',businessCode: 19,actionType:'xxx-view'}">
-    </div> -->
-    <!-- <div class="app-online-list" v-track="{triggerType:'click',currentUrl: $route.path,behavior:'点击xxx按钮',businessCode: 19,actionType:'xxx-click'}">
-</div> -->
-   <!-- <button type="primary"
-      v-track="{triggerType:'click',currentUrl: $route.path,behavior:'点击xxx按钮',businessCode: 19,actionType:'xxx-click'}">页面主操作
-      Normal</button> -->
-    <u-button  v-track="{triggerType:'click',currentUrl: $route.path,behavior:'点击xxx按钮',businessCode: 19,actionType:'xxx-click'}" class="go-upload" type="primary" @click="goUpload()">立即使用</u-button>
-
+      <!-- <image class="coverbgimg" style="height: 154px;" src="../../static/images/index/img2.png"></image> -->
+      <image class="coverbgimg" style="height: 50px;"  src="../../static/images/index/item2-1.png"></image>
+      <image class="coverbgimg" style="height: 149px;" src="../../static/images/index/item2-2.png"></image>
+    </view>
+    <view class="imgitem item3" id="item3 坑">
+      <image class="coverbgimg" style="height: 314px;" src="../../static/images/index/item3.png"></image>
+    </view>
+    <view class="imgitem item4" id="item4 遇到">
+      <image class="coverbgimg" style="height: 42px;" src="../../static/images/index/item4-1.png" mode="aspectFit">
+      </image>
+      <image class="coverbgimg" style="height: 342px;" src="../../static/images/index/item4-2.png" mode="aspectFit">
+      </image>
+      <image class="coverbgimg" style="height: 146px;" src="../../static/images/index/item4-3.png" mode="aspectFit">
+      </image>
+    </view>
+    <view class="imgitem item5" id="item5 用心">
+      <image class="coverbgimg" style="height: 390px;" src="../../static/images/index/item5.png" mode="aspectFit">
+      </image>
+    </view>
+    <view class="imgitem item6" id="item6 套餐">
+      <image class="coverbgimg" style="height: 60px;" src="../../static/images/index/item6-1.png" mode="aspectFit">
+      </image>
+      <image class="coverbgimg" style="height: 152px;" src="../../static/images/index/item6-2.png" mode="aspectFit">
+      </image>
+      <image class="coverbgimg" style="height: 152px;" src="../../static/images/index/item6-3.png" mode="aspectFit">
+      </image>
+      <image class="coverbgimg" style="height: 166px;" src="../../static/images/index/item6-4.png" mode="aspectFit">
+      </image>
+    </view>
+    <view class="imgitem item7" id="item7 流程">
+      <image class="coverbgimg" style="height: 42px;" src="../../static/images/index/item7-1.png" mode="aspectFit">
+      </image>
+      <image class="coverbgimg" style="height: 316px;" src="../../static/images/index/item7-2.png" mode="aspectFit">
+      </image>
+    </view>
+    <view class="imgitem item8" id="item8 选择">
+      <image class="coverbgimg" style="height: 53px;" src="../../static/images/index/item8-1.png" mode="aspectFit">
+      </image>
+      <image class="coverbgimg" style="height: 266px;" src="../../static/images/index/item8-2.png" mode="aspectFit">
+      </image>
+      <image class="coverbgimg" style="height: 179px;margin-top: 20px;" src="../../static/images/index/item8-3.png"
+        mode="aspectFit"></image>
+    </view>
+    <view class="imgitem item9" id="item9 放心保护">
+      <image class="coverbgimg" style="height: 168px;" src="../../static/images/index/item9.png" mode="widthFix">
+      </image>
+    </view>
+    <view class="imgitem item10" id="item10 拍拍审">
+      <image class="coverbgimg" style="height: 158px;" src="../../static/images/index/item10.png" mode="aspectFit">
+      </image>
+    </view>
+    <u-button
+      v-track="{triggerType:'click',currentUrl: $route.path,behavior:'点击xxx按钮',businessCode: 19,actionType:'xxx-click'}"
+      class="go-upload" type="primary" @click="goUpload()">立即使用</u-button>
   </view>
-
 </template>
-
 <script>
+  import residenceTime from '@/common/residenceTime.js';
   import {
     mapState,
     mapGetters,
@@ -139,24 +133,32 @@
     login,
     getinfo
   } from '@/api/user';
-
   export default {
-    components: {},
+    components: {
+
+    },
+    mixins:[residenceTime],
     data() {
       return {
+        pagetype:'indexPage',
+        bannerLists:[
+          {
+            title:''
+          }
+        ],
         list: [{
             name: '选项一',
-            subname: "选项一描述",
-            color: '#ffaa7f',
-            fontSize: '20'
+            // subname: "选项一描述",
+            // color: '#ffaa7f',
+            // fontSize: '20'
           },
           {
             name: '选项二禁用',
-            disabled: true
+            // disabled: true
           },
           {
             name: '开启load加载', //开启后文字不显示
-            loading: true
+            // loading: true
           }
         ],
         title: '标题',
@@ -177,7 +179,7 @@
       }
     },
     computed: {
-      ...mapState(['ruterLists']),
+      ...mapState(['ruterLists','userEventInfo']),
       ...mapGetters(['powerCount']),
       swiperList() {
         return this.bannerList.map(item => {
@@ -194,11 +196,29 @@
         })
       }
     },
+
     onLoad() {
       // this.testPost();
-      uni.hideTabBar()
+      uni.hideTabBar();
+      // console.log('parent page onLoad')
+
+
     },
+    onShow(){
+       // console.log('parent page onShow')
+    },
+
     methods: {
+      onselect(v) {
+        console.log('seeh', v)
+      },
+      onclose() {
+
+      },
+      open() {
+        // 通过组件定义的ref调用uni-popup方法 ,如果传入参数 ，type 属性将失效 ，仅支持 ['top','left','bottom','right','center']
+        // this.$refs.popup.open('top')
+      },
       async testPost() {
         let res = await captcha({
           page: 0,
@@ -208,7 +228,6 @@
         //   page: 0,
         //   pagesize: 5
         // })
-        console.log('反对水水水水', res)
         this.codesrc = res.data
         this.loginInfo.uuid = res.id;
       },
@@ -347,12 +366,15 @@
         // console.log('close');
       }
     },
+    // beforeDestroy() {},
 
   }
 </script>
 
 <style lang="scss" scoped>
   .container {
+    padding-bottom: 80px;
+
     .item {
       text-align: center;
       padding: 20px;
@@ -366,6 +388,7 @@
       .title {
         font-size: 24px;
         color: #000;
+        font-weight: bold;
       }
 
       .auth-btn {
@@ -389,10 +412,59 @@
         }
 
         .btn {
-          width: 100px;
-          height: 30px;
+          width: 150px;
+          font-size: 18px;
+          // padding: 0 20px;
         }
       }
+    }
+
+    .imgitem {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .item-title {
+        width: 95%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .title-img {
+          width: 25%;
+          height: 50px;
+          position: absolute;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+
+          &.-left {
+            left: 0;
+            background-image: url('../../static/images/index/_left.png');
+          }
+
+          &.-right {
+            right: 0;
+            background-image: url('../../static/images/index/_right.png');
+          }
+        }
+
+        .title-text {
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+          font-size: 26px;
+          height: 100%;
+          font-weight: bold;
+          align-items: center;
+          justify-content: center;
+          line-height: 26px;
+        }
+      }
+
     }
 
     .go-upload {
@@ -403,5 +475,6 @@
       transform: translate(-50%, 0);
       z-index: 99999;
     }
+
   }
 </style>

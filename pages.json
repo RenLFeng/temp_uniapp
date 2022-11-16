@@ -1,10 +1,16 @@
 {
   "easycom": {
-    "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+    // "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+      // "^u-(.*)": "@/node_modules/uview-ui/components/u-$1/u-$1.vue"
     // "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
   },
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-
+  // {
+  //     "path": "pages/main/main",
+  //     "style": {
+  //       "navigationBarTitleText": "上上参谋"
+  //     }
+  //   },
 
     {
       "path": "pages/index/index",
@@ -120,7 +126,16 @@
       }
 
     }
-  ],
+      ,{
+            "path" : "pages/main/main",
+            "style" :
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+
+        }
+    ],
   "tabBar": {
     "selectedColor": "#333333",
     "color": "#bfbfbf",
@@ -144,23 +159,23 @@
       //   "iconPath": "/static/images/tabbar/cart.png",
       //   "selectedIconPath": "/static/images/tabbar/cart-active.png"
       // },
-      {
-        "pagePath": "pages/messagefile/messagefile"
-        // "text": "上传文件",
-        // "iconPath": "/static/images/tabbar/cart.png",
-        // "selectedIconPath": "/static/images/tabbar/cart-active.png"
-      },
-      {
-        "pagePath": "pages/index/index"
-        // "text": "我的",
-        // "iconPath": "/static/images/tabbar/user.png",
-        // "selectedIconPath": "/static/images/tabbar/user-active.png"
-      }
+      // {
+      //   // "pagePath": "pages/messagefile/messagefile"
+      //   // "text": "上传文件",
+      //   // "iconPath": "/static/images/tabbar/cart.png",
+      //   // "selectedIconPath": "/static/images/tabbar/cart-active.png"
+      // },
+      // {
+      //   // "pagePath": "pages/index/index"
+      //   // "text": "我的",
+      //   // "iconPath": "/static/images/tabbar/user.png",
+      //   // "selectedIconPath": "/static/images/tabbar/user-active.png"
+      // }
     ]
   },
   "globalStyle": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "yudao-ui-app",
+    "navigationBarTitleText": "app",
     "navigationBarBackgroundColor": "#fff",
     "backgroundColor": "#ffffff"
   }

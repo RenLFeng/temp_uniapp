@@ -34,4 +34,12 @@ export default {
 page{
   // height: 100%;
 }
+.bgf{
+  background-color: #fff;
+}
+</style>
+<style>
+  .coverbgimg >div{
+    background-size: cover !important;
+  }
 </style>
